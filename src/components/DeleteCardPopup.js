@@ -10,13 +10,13 @@ function DeleteCardPopup({ isOpen, onSubmit, onClose, cardId }) {
     
     return (
         <PopupWithForm
+            buttonText="Да"
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
             name="confirmation-delete"
             title="Вы уверены?">
             <fieldset className="popup__fieldset">
-                <button className="popup__button">Да</button>
             </fieldset>
         </PopupWithForm>)
 }

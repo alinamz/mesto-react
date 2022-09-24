@@ -29,22 +29,22 @@ function App() {
     api.changeUserData(userData.name, userData.about)
       .then((userData) => {
         setCurrentUser(userData);
+        closeAllPopups()
       })
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => closeAllPopups());
   }
  // добавляем новый аватар
   function handleUpdateAvatar({ avatar }) {
     api.setProfileAvatar(avatar)
       .then((userAvatar) => {
-        setCurrentUser(userAvatar)
+        setCurrentUser(userAvatar);
+        closeAllPopups()
       })
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => closeAllPopups());
   }
 
   // добавляем новую карточку
@@ -53,11 +53,11 @@ function App() {
     api.addNewCard(name, link)
     .then((newCard) => {
       setCards([newCard, ...cards]);
+      closeAllPopups();
     })
     .catch((err) => {
       console.log(err);
     })
-    .finally(() => closeAllPopups());
   }
 
   // закрываем все попапы
@@ -91,12 +91,12 @@ function App() {
   const  handleCardDeleteSubmit = (card) => {
     api.deleteCard(card._id)
       .then(() => {
-        setCards((state) => state.filter((c) => c._id !== card._id))
+        setCards((state) => state.filter((c) => c._id !== card._id));
+        closeAllPopups()
       })
       .catch(err => {
         console.log(err)
       })
-      .finally(() => closeAllPopups());
   }
 
   // открываем попап удаления карточки для выбранной карточки

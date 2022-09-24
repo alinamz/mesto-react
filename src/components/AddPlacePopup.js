@@ -24,6 +24,7 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
 
     return (
         <PopupWithForm
+            buttonText="Сохранить"
             name="add-place"
             title="Новое место"
             isOpen={isOpen}
@@ -43,7 +44,7 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
                     <span className="link-image-error form__input-error" ></span>
                 </label>
             </fieldset>
-            <button className="popup__button" type="submit">Создать</button>
+            
         </PopupWithForm>
     )
 }

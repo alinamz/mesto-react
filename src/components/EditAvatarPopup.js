@@ -19,6 +19,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
 
     return (
         <PopupWithForm
+            buttonText="Сохранить"
             name="update-profile"
             title="Обновить аватар"
             isOpen={isOpen}
@@ -31,7 +32,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
                     <span className="info-img-error form__input-error"></span>
                 </label>
             </fieldset>
-            <button className="popup__button" type="submit" >Сохранить</button>
+           
         </PopupWithForm>
     )
 }

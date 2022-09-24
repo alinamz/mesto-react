@@ -17,9 +17,7 @@ class Api {
     }
 
     getInitalCards() {
-        return fetch(`${this._baseUrl}/cards`, {
-            headers: this._headers
-        }).then(res => res.json());
+        return this._fetch(`/cards`);
     }
 
     getUserData() {

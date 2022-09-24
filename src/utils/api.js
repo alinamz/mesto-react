@@ -1,4 +1,4 @@
- class Api {
+class Api {
     constructor(config) {
         this._baseUrl = config.baseUrl;
         this._headers = config.headers;
@@ -65,21 +65,34 @@
             "DELETE");
     }
 
-    setProfileAvatar({ info }) {
-        const obj = { "avatar": info }
+    setProfileAvatar(avatarLink) {
+        const obj = { "avatar": avatarLink };
         return this._fetch(
             '/users/me/avatar',
             'PATCH',
             JSON.stringify(obj))
     }
 
+    changeLikeCardStatus(cardId, isLiked) {
+        if (isLiked) {
+            return this._fetch(
+                `/cards/${cardId}/likes`,
+                "PUT");
+          } else {
+            return this._fetch(
+                `/cards/${cardId}/likes`,
+                "DELETE");
+          }
+     }
+
+
 }
 
 const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-48',
     headers: {
-      authorization: "7d67df57-04a3-4c0e-b94c-731b56c35104",
-      'Content-Type': 'application/json',
+        authorization: "7d67df57-04a3-4c0e-b94c-731b56c35104",
+        'Content-Type': 'application/json',
     },
-  });
-  export default api;
+});
+export default api;

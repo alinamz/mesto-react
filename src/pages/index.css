@@ -45,3 +45,5 @@
 @import url(../blocks/form/form.css);
 @import url(../blocks/profile/__update-avatar/profile____update-avatar.css);
 @import url(../blocks/element/__like-sum/element__like-sum.css);
+@import url(../blocks/element/__delete/_hidden/.element__delete_hidden.css);
+@import url(../blocks/element/__delete/_visible/element__delete_visible.css);
